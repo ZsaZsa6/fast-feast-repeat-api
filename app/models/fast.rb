@@ -1,0 +1,2 @@
+class Fast < ApplicationRecord
+end
