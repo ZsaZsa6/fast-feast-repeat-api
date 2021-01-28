@@ -5,6 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-fast1 = Fast.create(active: true)
+Fast.new
 comment1 = Comment.create(content: "I feel good during this fast")
 
