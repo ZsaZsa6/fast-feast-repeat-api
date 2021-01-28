@@ -14,8 +14,10 @@ ActiveRecord::Schema.define(version: 2021_01_27_214318) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
+    t.integer "fast_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["fast_id"], name: "index_comments_on_fast_id"
   end
 
   create_table "fasts", force: :cascade do |t|
@@ -24,4 +26,5 @@ ActiveRecord::Schema.define(version: 2021_01_27_214318) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "comments", "fasts"
 end
