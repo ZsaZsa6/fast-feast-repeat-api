@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_214318) do
   end
 
   create_table "fasts", force: :cascade do |t|
-    t.boolean "active", default: false
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
