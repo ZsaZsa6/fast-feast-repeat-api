@@ -25,6 +25,7 @@ class FastsController < ApplicationController
     def update
         fast = Fast.find_by(id: params[:id])
         fast.update(fast_params)
+        # binding.pry
         render json: fast.calculate_hours.merge!(fast: fast)
     end
 
@@ -36,7 +37,7 @@ class FastsController < ApplicationController
     private
 
     def fast_params
-        params.permit(:active)
+        params.permit(:id, :active)
     end
 end
 # time stamp.now strftime difference use  timedifference.between (created_at - Time.now).humanize
