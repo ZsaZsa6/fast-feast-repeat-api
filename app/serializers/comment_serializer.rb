@@ -6,6 +6,6 @@ class CommentSerializer < ActiveModel::Serializer
 
   # def to_serialized_json
   #   options = include: fast
-  #   @sighting.to_json(options)
+  #   @comment.to_json(options)
   # end
 end

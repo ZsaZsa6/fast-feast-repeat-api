@@ -1,3 +1,5 @@
 class FastSerializer < ActiveModel::Serializer
-  attributes :id, :active, :created_at, :updated_at
+  # has_many :commentsh
+  attributes :fast, :id, :active, :created_at, :updated_at
+  
 end

@@ -3,17 +3,19 @@ class FastsController < ApplicationController
     def index
         fasts = Fast.all
         
-       new_fast_hash = fasts.map do |fast|
+        new_fast_hash = fasts.map do |fast|
             fast.calculate_hours.merge!(fast: fast)
+            # binding.pry
            
-       end
+        end
 
         render json: new_fast_hash
-        # , include: [:comment
+        
+       
     end
 
     def show
-        fast = Fast.find(params[:id])    
+        fast = Fast.find(params[:id])
         render json: fast.calculate_hours.merge!(fast: fast)
     end
     def create
