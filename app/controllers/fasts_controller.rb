@@ -31,11 +31,7 @@ class FastsController < ApplicationController
 
     end
 
-    private
-
-    def fast_params
-        params.permit(:id, :active)
-    end
+   
 end
 
 

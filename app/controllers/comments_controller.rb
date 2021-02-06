@@ -2,23 +2,22 @@ require 'pry'
 class CommentsController < ApplicationController
 
     def index
-        binding.pry
         fast = Fast.find(params[:id])
         comments = Comment.all.fast.id
         render json: comments
     end
 
     # def show
-    #     fast = Fast.find(params[:id])
+    #     # fast = Fast.find(params[:id])
     #     comment = Comment.find(params[:id])
 
     #     render json: comment
     # end
 
-    def create
-        binding.pry
-        fast = Fast.find(params[:id])
+    def create        
         comment = Comment.create(comment_params)
+        # fast = Fast.find(params[:id])
+        # binding.pry
         render json: comment
     end
 
@@ -36,7 +35,7 @@ class CommentsController < ApplicationController
 
     private
     def comment_params
-        params.permit(:content)
+        params.require(:comment).permit(:fast_id, :content)
     end
 
 end
