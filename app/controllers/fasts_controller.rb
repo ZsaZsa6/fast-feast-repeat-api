@@ -3,10 +3,12 @@ class FastsController < ApplicationController
     def index
         fasts = Fast.all
         # binding.pry
-        new_fast_hash = fasts.map do |fast|
+        new_fast_array = fasts.map do |fast|
             fast.calculate_hours.merge!(fast: fast)
         end
-        render json: new_fast_hash, include: [:comments]
+        render json: new_fast_array, include: 
+        [comments: {only: [:fast_id, :content, :id]}]
+    
     end
 
     def show
